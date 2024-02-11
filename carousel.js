@@ -4,16 +4,15 @@ let rightArrow = document.getElementById("btnRightArrow");
 let pausePlay = document.getElementById("btnPausePlay");
 let svgPlay = document.getElementById("PlayIcon");
 let svgPause = document.getElementById("PauseIcon");
+const imageTiming = 5
 let statePlay = true;
-let nextBackground = "";
-let lastBackground = "";
 let numNames = 4;
 let itter = 0;
+
 let listOfImages = ["img1_planet.png","img2_robot.png","img3_slime.png","img4_digitalspace.png"];
-
-const interval = setInterval(changeBackground(true), 500);
-
 numNames = listOfImages.length;
+
+let interval = setInterval(() => changeBackground(true), imageTiming * 1000);
 container.style.backgroundImage = "url(./images/img1_planet.png)";
 
 btnPausePlay.onclick = (event) => {
@@ -22,6 +21,7 @@ btnPausePlay.onclick = (event) => {
     if(statePlay){
         svgPause.style.display = "block";
         svgPlay.style.display = "none";
+        interval = setInterval(() => changeBackground(true), imageTiming * 1000);
     } else {
         svgPause.style.display = "none";
         svgPlay.style.display = "block";
