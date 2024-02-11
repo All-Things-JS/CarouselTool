@@ -1,0 +1,27 @@
+*{
+margin: 0;
+padding: 0;
+}
+
+button {
+    background-color: rgba(0,0,0,0);
+    color: none;
+    border-style: none;
+}
+
+#carousel {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+#carousel img {
+    color: none;
+}
+#carousel #controls {
+    width: fit-content;
+    margin: 0 auto;
+    background-color: rgba(0, 161, 161, 0.322);
+    border-radius: 10px;
+}
