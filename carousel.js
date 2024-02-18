@@ -4,7 +4,7 @@ let rightArrow = document.getElementById("btnRightArrow");
 let pausePlay = document.getElementById("btnPausePlay");
 let svgPlay = document.getElementById("PlayIcon");
 let svgPause = document.getElementById("PauseIcon");
-const imageTiming = 5
+const imageTiming = 5;
 let statePlay = true;
 let numNames = 4;
 let itter = 0;
@@ -32,22 +32,14 @@ btnPausePlay.onclick = (event) => {
 }
 
 function changeBackground(forward) {
-    
     if(forward){
-        
-        if(itter >= listOfImages.length-1){
-            itter = 0;
-        } else {
-            itter++;
-        }
+      itter = (itter + 1) % listOfImages.length;
+      container.style.backgroundImage = "url(./images/" + listOfImages[itter] + ")";
+      console.log(itter);
     }
     else{
-        
-        if(itter < 1){
-            itter = listOfImages.length-1;
-        } else {
-            itter--;
-        }
+      itter = (itter - 1 + listOfImages.length) % listOfImages.length;
+      container.style.backgroundImage = "url(./images/" + listOfImages[itter] + ")";
+      console.log(itter);
     }
-    container.style.backgroundImage = "url(./images/" + listOfImages[itter] + ")";
 }
