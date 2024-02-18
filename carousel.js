@@ -34,20 +34,18 @@ btnPausePlay.onclick = (event) => {
 function changeBackground(forward) {
     
     if(forward){
-        
-        if(itter >= listOfImages.length-1){
-            itter = 0;
-        } else {
-            itter++;
-        }
+        itter = itter % listOfImages.length + 1;
+        container.style.backgroundImage = "url(./images/" + listOfImages[itter-1] + ")";
     }
     else{
-        
         if(itter < 1){
             itter = listOfImages.length-1;
         } else {
             itter--;
         }
+        container.style.backgroundImage = "url(./images/" + listOfImages[itter] + ")";
+        
     }
-    container.style.backgroundImage = "url(./images/" + listOfImages[itter] + ")";
+
+    
 }
